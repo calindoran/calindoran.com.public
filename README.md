@@ -87,4 +87,4 @@ Last updated: 2023
 
 <br />
 
-<p align="center">Made in Ireland</p>
+<p align="center">Made in Ireland 🇮🇪</p>
