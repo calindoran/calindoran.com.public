@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cd-bg: #ffffff;
+  --cd-fg: #121212;
+
+  --theme-1: #f0f0f0;
+  --theme-2: #38ef7d;
+  --theme-3: #38df7d;
+  --theme-4: #38d77d;
+  --theme-5: #38cf7d;
+  --theme-6: #38c77d;
+  --theme-7: #38bf7d;
+  --theme-8: #38b77d;
+  --theme-9: #38af7d;
+  --theme-10: #349a73;
+  --theme-11: #328e6f;
+  --theme-12: #1a1a1a;
+
+  --accent-1: #fafafa;
+  --accent-2: #eaeaea;
+  --accent-3: #999;
+  --accent-4: #888;
+  --accent-5: #666;
+  --accent-6: #444;
+  --accent-7: #333;
+  --accent-8: #111;
+
+  --scroll-bar-1: #38d77d;
+  --scroll-bar-2: #38ef7d;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark:root {
+    --cd-bg: #121212;
+    --cd-fg: #ffffff;
+
+    --theme-1: #1a1a1a;
+    --theme-2: #328e6f;
+    --theme-3: #349a73;
+    --theme-4: #38af7d;
+    --theme-5: #38b77d;
+    --theme-6: #38bf7d;
+    --theme-7: #38c77d;
+    --theme-8: #38cf7d;
+    --theme-9: #38d77d;
+    --theme-10: #38df7d;
+    --theme-11: #38ef7d;
+    --theme-12: #f0f0f0;
+
+    --accent-1: #111;
+    --accent-2: #333;
+    --accent-3: #444;
+    --accent-4: #666;
+    --accent-5: #888;
+    --accent-6: #999;
+    --accent-7: #eaeaea;
+    --accent-8: #fafafa;
+
+    --scroll-bar-1: #38d77d;
+    --scroll-bar-2: #38ef7d;
+  }
+}
+
+html {
+  min-width: 360px;
+}
+
+::selection {
+  @apply bg-[rgba(56,240,126,0.05)] text-[#38EF7D] dark:bg-[rgba(56,240,126,0.2)] dark:text-[#11998E];
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 3px;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: var(--scroll-bar-1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-bar-2);
+  overflow-y: auto;
+}
+
+.prose .anchor {
+  @apply absolute invisible no-underline;
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+}
+
+.prose .anchor:after {
+  @apply text-neutral-600 dark:text-neutral-200;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}
+
+.prose pre {
+  @apply overflow-x-auto border rounded-lg bg-neutral-50 dark:bg-neutral-900 border-neutral-200 dark:border-neutral-900;
+}
+
+.prose code {
+  @apply px-1 py-0.5 rounded-lg;
+}
+
+.prose pre code {
+  @apply p-0 text-neutral-600 dark:text-neutral-200 font-code;
+  border: initial;
+  line-height: 1.5;
+}
+
+.prose code span {
+  @apply font-medium;
+}
+
+.prose img {
+  @apply m-0;
+}
+
+.prose h2,
+h3,
+h4 {
+  @apply font-medium text-neutral-600 dark:text-neutral-200 tracking-tighter !important;
+}
+
+.prose strong {
+  @apply font-medium;
+}
+
+.prose > :first-child {
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+input[type='text'],
+input[type='email'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.prose .callout > p {
+  margin: 0 !important;
+}
+
+.title {
+  text-wrap: balance;
+}
